@@ -1,23 +1,19 @@
 package com.example.tasks.Model;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
 public class Task {
-
-        private String name;
-        private String description;
-        private String status;
-
-        public Task() {
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public String getDescription() {
-            return description;
-        }
-
-        public String getStatus() {
-            return status;
-        }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String name;
+    private String description;
+    private String status;
 }
